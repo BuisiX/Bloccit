@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'sqlite3'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
