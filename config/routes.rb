@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/application'
+
   get 'welcome/index'
 
   get 'welcome/about'
