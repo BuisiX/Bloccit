@@ -51,4 +51,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Adds extra features not available on IRB shell
+  gem 'pry-rails'
 end
