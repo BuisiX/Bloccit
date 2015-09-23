@@ -55,4 +55,6 @@ group :development, :test do
 
   # Adds extra features not available on IRB shell
   gem 'pry-rails'
+
+  gem 'devise'
 end
