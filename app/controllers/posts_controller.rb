@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :flash_attack
+skip_before_action :flash_attack, :only => [:index, :new]
 
   def index
     @posts = Post.all
@@ -27,5 +27,16 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.new(params.require(:post).permit(:title, :body))
+    if @post.save
+      flash[:notice] = "Post was saved."
+      redirect_to @post
+    else
+      flash[:error] = "There was an error saving the post. Please try again."
+      render :new
+    end
   end
 end
