@@ -28,11 +28,11 @@ posts = Post.all
     body: Faker::Lorem.paragraph
   )
 end
-(
+
 user = User.first
 user.skip_reconfirmation!
 user.update_attributes!(
-  email: 'youremail.com',
+  email: 'nwabuisi33@gmail.com',
   password: 'helloworld'
 )
 
