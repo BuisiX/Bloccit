@@ -6,6 +6,10 @@ class ApplicationPolicy
     @record = record
   end
 
+  include Pundit
+
+  protected
+
   def index?
     false
   end

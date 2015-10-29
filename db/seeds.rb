@@ -1,4 +1,5 @@
 require 'faker'
+require 'pundit'
 # Create Users
 5.times do
   user = User.new(
@@ -24,6 +25,7 @@ posts = Post.all
 # Create Comments
 100.times do
   Comment.create!(
+    user: users.sample,
     post: posts.sample,
     body: Faker::Lorem.paragraph
   )
