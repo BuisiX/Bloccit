@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
   devise_for :users
-resources :topics do
-  resources :posts, except: [:index]
-end
+  resources :topics do
+    resources :posts do
+      resources :summaries, except: [:index]
+    end
+  end
 
 get 'about' => 'welcome#about'
 
 root to: 'welcome#index'
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -63,4 +66,3 @@ root to: 'welcome#index'
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

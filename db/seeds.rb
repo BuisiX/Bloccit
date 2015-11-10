@@ -31,6 +31,15 @@ users = User.all
 end
 posts = Post.all
 
+# Create Summaries
+50.times do
+  Summary.create!(
+    post: posts.sample,
+    description: Faker::Lorem.paragraph
+  )
+end
+summaries = Summary.all
+
 # Create Comments
 100.times do
   Comment.create!(
@@ -38,6 +47,7 @@ posts = Post.all
     body: Faker::Lorem.paragraph
   )
 end
+comment = Comment.all
 
 admin = User.new(
    name:     'Admin User',
@@ -71,4 +81,5 @@ puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
+puts "#{Summary.count} summaries created"
 puts "#{Comment.count} comments created"

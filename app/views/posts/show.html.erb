@@ -1,7 +1,29 @@
 <h1><%= @post.title %></h1>
 
 <% if policy(@post).edit? %>
-   <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-success' %>
+   <%= link_to "Edit", edit_topic_path(@post), class: 'btn btn-success' %>
 <% end %>
 
-<p><%= @post.body %></p>
+<div class="row">
+  <div class="col-md-8">
+    <p class="lead"><%= @post.body %></p>
+    <% @summary.each do |summary| %>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to summary.description, [@post, summary] %>
+        </h4>
+        <small>
+          submitted <%= time_ago_in_words(summary.created_at) %> ago <br>
+          <%= summary.count %> Summaries
+        </small>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class-"col-md-4">
+  <% if policy(Summary.new).create? %>
+    <%= link_to "Edit Summary", edit_topic_post_summary_path(@post), class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
