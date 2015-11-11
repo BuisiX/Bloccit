@@ -35,6 +35,7 @@ posts = Post.all
 50.times do
   Summary.create!(
     post: posts.sample,
+    title: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph
   )
 end
