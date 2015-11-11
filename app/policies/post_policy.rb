@@ -1,26 +1,39 @@
 class PostPolicy < ApplicationPolicy
 
-  def permitted_attributes
-    if user.admin? || user.owner_of?(post)
-      [:title, :body, :tag_list]
+  # def permitted_attributes
+  #   if user.admin? || user.owner_of?(post)
+  #     [:title, :body, :tag_list]
+  #   else
+  #     [:tag_list]
+  #   end
+  # end
+  def index?
+    true
+  end
+
+  def show?
+    if ( user.admin? || user.moderator? )
+      true
     else
-      [:tag_list]
+      false
     end
   end
 
   class Scope
-    attr_reader :user, :posts, :scope
+    attr_reader :user, :scope
 
-    def initialize(user, posts)
+    def initialize(user, scope)
       @user = user
-      @posts = posts
+      @scope = scope
     end
 
     def resolve
-      if user.present? && (record.user == user || user.admin? || user.moderator?)
+      if !user.present?
+        scope.none
+      elsif (user.admin? || user.moderator?)
         scope.all
       else
-        scope.where :published => true
+        scope.where(user_id: user.id)
       end
     end
   end

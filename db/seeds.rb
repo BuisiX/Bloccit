@@ -23,13 +23,13 @@ end
 posts = Post.all
 
 # Create Comments
-100.times do
-  Comment.create!(
-    user: users.sample,
-    post: posts.sample,
-    body: Faker::Lorem.paragraph
-  )
-end
+# 100.times do
+#   Comment.create!(
+#     user: users.sample,
+#     post: posts.sample,
+#     body: Faker::Lorem.paragraph
+#   )
+# end
 
 admin = User.new(
    name:     'Admin User',
@@ -62,4 +62,4 @@ admin = User.new(
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Post.count} posts created"
-puts "#{Comment.count} comments created"
+# puts "#{Comment.count} comments created"

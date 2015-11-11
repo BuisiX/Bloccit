@@ -1,8 +1,8 @@
 <h1>All Posts</h1>
-<% policy_scope(@user.posts).each do |post| %>
-  <%= link_to post.title, post_path(post) %>
-<% end %>
-<% @posts.each do |post| %>
+ <%#  %>
+   <%#= link_to "New Post" new_post_path(post) %>
+ <%# end %>
+<% policy_scope(@posts).each do |post| %>
 <div class="media">
   <div class="media-body">
     <h4 class="media-heading">
