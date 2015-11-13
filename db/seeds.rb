@@ -34,21 +34,20 @@ posts = Post.all
 # Create Summaries
 50.times do
   Summary.create!(
+    title:  Faker::Lorem.sentence,
     post: posts.sample,
-    title: Faker::Lorem.sentence,
-    description: Faker::Lorem.paragraph
   )
 end
 summaries = Summary.all
 
 # Create Comments
-100.times do
-  Comment.create!(
-    post: posts.sample,
-    body: Faker::Lorem.paragraph
-  )
-end
-comment = Comment.all
+# 100.times do
+#   Comment.create!(
+#     post: posts.sample,
+#     body: Faker::Lorem.paragraph
+#   )
+# end
+# comment = Comment.all
 
 admin = User.new(
    name:     'Admin User',
@@ -83,4 +82,4 @@ puts "#{User.count} users created"
 puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Summary.count} summaries created"
-puts "#{Comment.count} comments created"
+# puts "#{Comment.count} comments created"

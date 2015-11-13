@@ -1,2 +1,5 @@
-<h1>Summaries#show</h1>
-<p>Find me in app/views/summaries/show.html.erb</p>
+<h1><%= @summary.title %></h1>
+
+<% if policy(@summary).edit? %>
+   <%= link_to "Edit", edit_topic_post_path(summary.post), class: 'btn btn-success' %>
+<% end %>

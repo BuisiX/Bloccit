@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20151109230542) do
   end
 
   create_table "summaries", force: :cascade do |t|
-    t.text     "description"
+    t.string   "title"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "post_id"

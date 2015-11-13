@@ -3,25 +3,3 @@
 <% if policy(@post).edit? %>
    <%= link_to "Edit", edit_topic_path(@post), class: 'btn btn-success' %>
 <% end %>
-
-<div class="row">
-  <div class="col-md-8">
-    <p class="lead"><%= @post.body %></p>
-    <% @summaries.each do |summary| %>
-    <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= link_to summary.description, [@topic, post, summary] %>
-        </h4>
-        <small>
-          submitted <%= time_ago_in_words(summary.created_at) %> ago <br>
-        </small>
-      </div>
-    </div>
-    <% end %>
-</div>
-<div class-"col-md-4">
-  <% if policy(Summary.new).create? %>
-    <%= link_to "New Summary", new_topic_post_summary_path(@post), class: 'btn btn-success' %>
-  <% end %>
-</div>
