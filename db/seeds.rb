@@ -6,7 +6,7 @@ require 'faker'
     email:    Faker::Internet.email,
     password: Faker::Lorem.characters(10)
   )
-  user.skip_confirmation!
+  # user.skip_confirmation!
   user.save!
 end
 users = User.all
