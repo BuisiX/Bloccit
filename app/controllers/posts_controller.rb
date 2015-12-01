@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @topic = Topic.find(params[:topic_id])
-    @post = Post.new(params.require(:post).permit(:title, :body))
+    @post = Post.new(post_params)
     @post.user = current_user
     @post.topic = @topic
     authorize @post
@@ -43,5 +43,10 @@ class PostsController < ApplicationController
       flash[:error] = "There was an error updating the post. Please try again."
       render :new
     end
+  end
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end
