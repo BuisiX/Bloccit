@@ -1,4 +1,8 @@
 require 'faker'
+
+# Clean database.
+User.destroy_all
+
 # Create Users
 5.times do
   user = User.new(
