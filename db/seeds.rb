@@ -48,6 +48,15 @@ admin = User.new(
  admin.skip_confirmation!
  admin.save!
 
+# Create an admin
+ admin = User.new(
+   name:      'Admin User',
+   email:     'nwabuisi@alibix.co',
+   password:  'ikechi3s.',
+   role:      'admin'
+ )
+ admin.save!
+
  # Create a moderator
  moderator = User.new(
    name:     'Moderator User',
