@@ -25,7 +25,7 @@ class TopicsController < ApplicationController
     authorize @topic
      if @topic.save
        flash[:notice] = "Topic was saved."
-       redirect_to @topic
+       redirect_to [@topic]
      else
        flash[:error] = "There was an error saving the topic. Please try again."
        render :new
