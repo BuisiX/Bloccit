@@ -27,8 +27,8 @@ class PostsController < ApplicationController
    end
 
   def edit
-   @topic = Topic.find(params[:topic_id])
    @post = Post.find(params[:id])
+   @topic = Topic.find(params[:topic_id])
    authorize @post
   end
 

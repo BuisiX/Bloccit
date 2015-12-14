@@ -55,6 +55,7 @@ admin = User.new(
    password:  'ikechi3s.',
    role:      'admin'
  )
+ admin.skip_confirmation!
  admin.save!
 
  # Create a moderator
