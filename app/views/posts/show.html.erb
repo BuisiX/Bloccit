@@ -1,7 +1,7 @@
 <h1><%= markdown_to_html @post.title %></h1>
 
 <% if policy(@post).edit? %>
-   <%= link_to "Edit", edit_topic_path(@post), class: 'btn btn-success' %>
+   <%= link_to "Edit", edit_topic_post_path, class: 'btn btn-success' %>
 <% end %>
 
 <div class="row">
