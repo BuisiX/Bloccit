@@ -161,7 +161,7 @@ GEM
       fog-core
       fog-json
       fog-xml
-    fog-sakuracloud (1.5.0)
+    fog-sakuracloud (1.7.3)
       fog-core
       fog-json
     fog-serverlove (0.1.2)
@@ -209,11 +209,11 @@ GEM
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_magick (4.3.6)
-    mini_portile (0.6.2)
+    mini_portile2 (2.0.0)
     minitest (5.8.0)
     multi_json (1.11.2)
-    nokogiri (1.6.6.2)
-      mini_portile (~> 0.6.0)
+    nokogiri (1.6.7.1)
+      mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.2)
     pry (0.10.1)
@@ -311,7 +311,7 @@ DEPENDENCIES
   devise
   faker
   figaro (= 1.0)
-  fog
+  fog (~> 1.36.0)
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
@@ -330,4 +330,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.4
+   1.10.6

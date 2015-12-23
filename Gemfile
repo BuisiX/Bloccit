@@ -46,7 +46,7 @@ gem 'redcarpet'
 gem 'carrierwave'
 gem 'mini_magick'
 # Fog is a cloud storage used w/ S3 and carrierwave ...pics
-gem 'fog'
+gem 'fog', '~> 1.36.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

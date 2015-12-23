@@ -6,7 +6,7 @@ require 'faker'
     email:    Faker::Internet.email,
     password: Faker::Lorem.characters(10)
   )
-  # user.skip_confirmation!
+  user.skip_confirmation!
   user.save!
 end
 users = User.all
@@ -38,15 +38,6 @@ posts = Post.all
     body: Faker::Lorem.paragraph
   )
 end
-
-admin = User.new(
-   name:     'Admin User',
-   email:    'nwabuisi33@gmail.com',
-   password: 'ikechi3s.',
-   role:     'admin'
- )
- admin.skip_confirmation!
- admin.save!
 
 # Create an admin
  admin = User.new(
