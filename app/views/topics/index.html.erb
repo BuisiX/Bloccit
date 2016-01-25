@@ -2,6 +2,7 @@
 <% if policy(Topic.new).create? %>
    <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
 <% end %>
+<%= will_paginate @topics %>
 <% @topics.each do |topic| %>
 <div class="media">
   <div class="media-body">
