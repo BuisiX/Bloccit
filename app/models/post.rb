@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   has_many :comments
   belongs_to :user
   belongs_to :topic
+  self.per_page = 10
 
   default_scope { order('created_at DESC') }
 
