@@ -1,0 +1,10 @@
+SENDGRID_USERNAME: fak3us3rnm
+SENDGRID_PASSWORD: app1234567@heroku.com
+DEVISE_SECRET_KEY: SEcr3tDeV1seK3Y
+AWS_ACCESS_KEY_ID: youraccesskeyfromaws
+AWS_SECRET_ACCESS_KEY: yourreallyreallylongsecretkeyfromaws
+
+development:
+  AWS_BUCKET: something-unique-bloccit-development
+production:
+  AWS_BUCKET: something-unique-bloccit-production
