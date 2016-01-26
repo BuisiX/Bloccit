@@ -1,4 +1,7 @@
 <h1><%= markdown_to_html @post.title %></h1>
+
+<br>
+
 <div class="row">
   <div class="col-md-8">
     <small>
@@ -12,5 +15,15 @@
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path, class: 'btn btn-success' %>
     <% end %>
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <h2>Comments</h2>
+  <div class='col-md-12'>
+    <%= render @comments %>
+    <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
   </div>
 </div>
