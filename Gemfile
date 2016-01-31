@@ -43,10 +43,10 @@ gem 'redcarpet'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick'
 # Fog is a cloud storage used w/ S3 and carrierwave ...pics
-gem 'fog', '~> 1.36.0'
+gem 'fog', '~> 1.37.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
