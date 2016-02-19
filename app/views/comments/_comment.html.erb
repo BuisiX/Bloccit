@@ -2,7 +2,7 @@
   <%= comment.body %>
   <% if comment.user %>
   <small>
-    <%= comment.user.name %>
+    <em><%= comment.user.name || comment.user.email %></em>
   </small>
   <% end %>
 </p>
